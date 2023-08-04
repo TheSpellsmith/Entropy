@@ -7,6 +7,7 @@ public class Satalite : MovingObject
     void Start()
     { 
         AddDownForce();
+        RandomizeRotation();
     }
 
     void Update()
@@ -23,6 +24,7 @@ public class Satalite : MovingObject
             Destroy(gameObject);
         }
     }
+
     public override void ExplodeEffect(Vector2 BombPosition, float ExplosionPower)
     {
         ScoreTracker.Instance.AddScore100();

@@ -30,6 +30,11 @@ public class MovingObject : MonoBehaviour
         }
     }
 
+    public void RandomizeRotation()
+    {
+        gameObject.transform.rotation = Quaternion.AngleAxis(Random.Range(1, 360), Vector3.forward);
+    }
+
     public virtual void ExplodeEffect(Vector2 BombPosition, float ExplosionPower)
     {
         knockbackDirection = objectPos - BombPosition;
