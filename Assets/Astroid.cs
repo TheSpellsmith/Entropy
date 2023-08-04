@@ -33,9 +33,10 @@ public class Astroid : MovingObject
 
     private void RandomizeSize()
     {
-        scaleMultiplyer = Random.Range(.5f, 1.6f);
+        scaleMultiplyer = Random.Range(.1f, .4f);
         newScale = new Vector2(scaleMultiplyer, scaleMultiplyer);
         gameObject.transform.localScale = newScale;
+        gameObject.transform.rotation = Quaternion.AngleAxis(Random.Range(1,360), Vector3.forward);
     }
 
     public void DestroyOffScreen ()
