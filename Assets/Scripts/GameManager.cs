@@ -4,9 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 
-public class ScoreTracker : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static ScoreTracker Instance;
+    public static GameManager Instance;
     public float playerScore;
     public float finalScore;
     public float highScore;

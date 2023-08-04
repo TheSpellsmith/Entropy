@@ -32,6 +32,7 @@ public class Bomb : MonoBehaviour
                 CanGoBoom.OnExplode(gameObject.transform.position, BombRange, BombForce);
             }
         }
+        SoundManager.Instance.PlayBombExplode();
         yield return new WaitForSeconds(.1f);
         Destroy(gameObject);
     }

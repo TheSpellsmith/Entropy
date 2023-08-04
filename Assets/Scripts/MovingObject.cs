@@ -43,6 +43,6 @@ public class MovingObject : MonoBehaviour
 
     public void AddDownForce()
     {
-        objectRB.AddForce(Vector2.down * ScoreTracker.Instance.objectSpeed, ForceMode2D.Force);
+        objectRB.AddForce(Vector2.down * GameManager.Instance.objectSpeed, ForceMode2D.Force);
     }
 }

@@ -20,14 +20,16 @@ public class Satalite : MovingObject
     {
         if (collision.gameObject.TryGetComponent<Astroid>(out Astroid astroid))
         {
-            ScoreTracker.Instance.AddScore200();
+            GameManager.Instance.AddScore200();
+            SoundManager.Instance.PlaySataliteExplosion();
             Destroy(gameObject);
         }
     }
 
     public override void ExplodeEffect(Vector2 BombPosition, float ExplosionPower)
     {
-        ScoreTracker.Instance.AddScore100();
+        GameManager.Instance.AddScore100();
+        SoundManager.Instance.PlaySataliteExplosion();
         Destroy(gameObject);
     }
 
@@ -35,7 +37,8 @@ public class Satalite : MovingObject
     {
         if (gameObject.transform.position.y < -6)
         {
-            ScoreTracker.Instance.LoseScore300();
+            GameManager.Instance.LoseScore300();
+            SoundManager.Instance.PlaySataliteEscape();
             Destroy(gameObject);
         }
 

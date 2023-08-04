@@ -38,7 +38,7 @@ public class Spawner : MonoBehaviour
 
     public void SpawnNewObject(Vector2 spawnPos)
     {
-        if (Random.Range(0, 10) > ScoreTracker.Instance.spawnChance)
+        if (Random.Range(0, 10) > GameManager.Instance.spawnChance)
         {
             if(Random.Range(0, 10) < 8)
             {

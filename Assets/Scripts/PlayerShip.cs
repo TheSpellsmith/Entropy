@@ -41,7 +41,7 @@ public class PlayerShip : MovingObject
 
     private void PlayerBomb()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             bombSpawn = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);
             Instantiate(bomb, bombSpawn, gameObject.transform.rotation);

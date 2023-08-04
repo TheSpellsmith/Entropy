@@ -23,13 +23,21 @@ public class Astroid : MovingObject
     {
         if (other.gameObject.CompareTag("Ship"))
         {
-            ScoreTracker.Instance.finalScore = ScoreTracker.Instance.playerScore;
-            ScoreTracker.Instance.setHighScore();
-            ScoreTracker.Instance.satalitesDestroyed = 0;
-            ScoreTracker.Instance.playerScore = 0;
-            ScoreTracker.Instance.finalScore = 0;
-            SceneManager.LoadScene(0);
+            SoundManager.Instance.PlayShipExplode();
+            GameManager.Instance.finalScore = GameManager.Instance.playerScore;
+            GameManager.Instance.setHighScore();
+            GameManager.Instance.satalitesDestroyed = 0;
+            GameManager.Instance.playerScore = 0;
+            GameManager.Instance.finalScore = 0;
+            Destroy(other.gameObject);
+            StartCoroutine(SwitchToDeadScene());
         }
+    }
+
+     IEnumerator SwitchToDeadScene()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(0);
     }
 
     private void RandomizeSize()
