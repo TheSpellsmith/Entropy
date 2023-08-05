@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 2039009257}
   - component: {fileID: 2039009258}
   m_Layer: 0
-  m_Name: ScoreManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -997,6 +997,7 @@ MonoBehaviour:
   spawnChance: 0
   satalitesDestroyed: 0
   level: 0
+  playerLives: 3
 --- !u!1 &2039063839
 GameObject:
   m_ObjectHideFlags: 0

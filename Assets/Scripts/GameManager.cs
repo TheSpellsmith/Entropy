@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public float spawnChance;
     public float satalitesDestroyed;
     public float level;
+    public int playerLives;
 
 
 
@@ -106,5 +108,37 @@ public class GameManager : MonoBehaviour
         {
             highScore = finalScore;
         }
+    }
+
+    public void ResetGame()
+    {
+        if(playerLives < 0)
+        {
+            finalScore = playerScore;
+            setHighScore();
+            satalitesDestroyed = 0;
+            playerScore = 0;
+            finalScore = 0;
+            playerLives = 4;
+            StartCoroutine(SwitchToDeadScene());
+        }
+        else
+        {
+            playerLives -= 1;
+            StartCoroutine(SwitchToNextLife());
+        }
+
+    }
+
+    IEnumerator SwitchToDeadScene()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(0);
+    }
+
+    IEnumerator SwitchToNextLife()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(1);
     }
 }

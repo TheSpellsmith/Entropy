@@ -14,30 +14,15 @@ public class Astroid : MovingObject
         RandomizeSize();
         RandomizeRotation();
     }
-    void Update()
-    {
-
-    }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ship"))
         {
             SoundManager.Instance.PlayShipExplode();
-            GameManager.Instance.finalScore = GameManager.Instance.playerScore;
-            GameManager.Instance.setHighScore();
-            GameManager.Instance.satalitesDestroyed = 0;
-            GameManager.Instance.playerScore = 0;
-            GameManager.Instance.finalScore = 0;
+            GameManager.Instance.ResetGame();
             Destroy(other.gameObject);
-            StartCoroutine(SwitchToDeadScene());
         }
-    }
-
-     IEnumerator SwitchToDeadScene()
-    {
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(0);
     }
 
     private void RandomizeSize()
