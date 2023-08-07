@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+//INHERITANCE
 public class PlayerShip : MovingObject
 {
     public Vector2 mouseScreenPos;
@@ -14,6 +15,7 @@ public class PlayerShip : MovingObject
 
     public void Update()
     {
+        //ABSRACTION
         RotateShip();
         ScreenWrap();
         PlayerBomb();

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+//INHERITANCE
 public class Astroid : MovingObject
 {
     private float scaleMultiplyer;
@@ -10,6 +10,7 @@ public class Astroid : MovingObject
 
     private void Start()
     {
+        //ABSRACTION
         AddDownForce();
         RandomizeSize();
         RandomizeRotation();

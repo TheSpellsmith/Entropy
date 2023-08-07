@@ -16,6 +16,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        //ABSRACTION
         StartCoroutine(SpawnCycle());
     }
 

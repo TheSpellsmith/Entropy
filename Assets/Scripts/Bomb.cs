@@ -12,11 +12,13 @@ public class Bomb : MonoBehaviour
     public float bombDelay;
     void Start()
     {
+        //ABSRACTION
         Explode();
     }
 
     private void Explode () 
     {
+        //ABSRACTION
         StartCoroutine(BombDelay());
     } 
 

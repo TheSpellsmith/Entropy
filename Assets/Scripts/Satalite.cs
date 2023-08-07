@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//INHERITANCE
 public class Satalite : MovingObject
 {
     void Start()
-    { 
+    {
+        //ABSRACTION
         AddDownForce();
         RandomizeRotation();
     }
@@ -26,6 +27,7 @@ public class Satalite : MovingObject
         }
     }
 
+    //POLYMORPHISM
     public override void ExplodeEffect(Vector2 BombPosition, float ExplosionPower)
     {
         GameManager.Instance.AddScore100();

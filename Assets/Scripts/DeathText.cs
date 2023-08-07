@@ -10,6 +10,7 @@ public class DeathText : MonoBehaviour
 
     private void Start()
     {
+        //ABSRACTION
         SetDeathText();
     }
     private void SetDeathText()

@@ -11,6 +11,7 @@ public class TextManager : MonoBehaviour
 
     public void Update()
     {
+        //ABSRACTION
         setText();
     }
 

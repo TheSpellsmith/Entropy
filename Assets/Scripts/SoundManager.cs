@@ -14,6 +14,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        //ABSRACTION
         Instance = this;
     }
 
