@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public float satalitesDestroyed;
     public float level;
     public int playerLives;
+    public float previousHighScore;
 
 
 
@@ -106,19 +107,19 @@ public class GameManager : MonoBehaviour
     {
         if (finalScore > highScore)
         {
+            previousHighScore = highScore;
             highScore = finalScore;
+
         }
     }
 
     public void ResetGame()
     {
-        if(playerLives < 0)
+        if(playerLives < 1)
         {
             finalScore = playerScore;
             setHighScore();
             satalitesDestroyed = 0;
-            playerScore = 0;
-            finalScore = 0;
             playerLives = 4;
             StartCoroutine(SwitchToDeadScene());
         }
@@ -133,7 +134,8 @@ public class GameManager : MonoBehaviour
     IEnumerator SwitchToDeadScene()
     {
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(0);
+        playerScore = 0;
+        SceneManager.LoadScene(2);
     }
 
     IEnumerator SwitchToNextLife()

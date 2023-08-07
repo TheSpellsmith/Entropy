@@ -9,6 +9,8 @@ public class StartGame : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            GameManager.Instance.finalScore = 0;
+            GameManager.Instance.previousHighScore = GameManager.Instance.highScore;
             StartGameButton();
         }
     }

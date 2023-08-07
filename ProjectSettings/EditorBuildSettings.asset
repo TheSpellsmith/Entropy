@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AstroidGame.unity
     guid: b832ece84483e6c4f8b8b63eb8f8c388
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: bbee6b4f8d73e6c46b09c5b461e2dd91
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
