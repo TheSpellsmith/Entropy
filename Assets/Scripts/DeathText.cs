@@ -25,5 +25,6 @@ public class DeathText : MonoBehaviour
             pointDif= GameManager.Instance.highScore - GameManager.Instance.finalScore;
             deathText.SetText("You got " + GameManager.Instance.finalScore + " points and were "  + pointDif + " points away from a your previous highscore of " + GameManager.Instance.highScore + " points!");
         }
+        GameManager.Instance.SaveScore();
     }
 }

@@ -4,7 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-
+using System.IO;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 public class GameManager : MonoBehaviour
 {
     //ENCAPSULATION
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
 
         Instance = this;       
         DontDestroyOnLoad(gameObject);
+        LoadScore();
     }
 
     public void Update()
@@ -118,6 +122,7 @@ public class GameManager : MonoBehaviour
     {
         if(playerLives < 1)
         {
+            SaveScore();
             finalScore = playerScore;
             setHighScore();
             satalitesDestroyed = 0;
@@ -126,6 +131,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            SaveScore();
             playerLives -= 1;
             StartCoroutine(SwitchToNextLife());
         }
@@ -143,5 +149,41 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(1);
+    }
+    [SerializeField]
+
+    class SaveData
+    {
+        public float highScore;
+    }
+
+
+    public void SaveScore()
+    {
+        #if UNITY_EDITOR
+
+#else
+        SaveData data = new SaveData();
+        data.highScore = highScore;
+        string json = JsonUtility.ToJson(data);
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+#endif
+
+    }
+
+    public void LoadScore()
+    {
+        #if UNITY_EDITOR
+
+#else
+        string path = Application.persistentDataPath + "/savefile.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+            highScore = data.highScore;
+
+        }
+#endif
     }
 }
