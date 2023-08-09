@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class TextManager : MonoBehaviour
 {
-    public TMP_Text LevelText;
-    public TMP_Text ScoreText;
-    public TMP_Text HighScoreText;
+    //ENCAPSULATION
+    [SerializeField] private TMP_Text LevelText;
+    [SerializeField] private TMP_Text ScoreText;
+    [SerializeField] private TMP_Text HighScoreText;
 
     public void Update()
     {

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class DeathText : MonoBehaviour
 {
-    public TMP_Text deathText;
+    //ENCAPSULATION
+    [SerializeField] private TMP_Text deathText;
     private float pointDif;
 
     private void Start()

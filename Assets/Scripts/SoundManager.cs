@@ -5,12 +5,12 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
-
-    public AudioSource bombExplode;
-    public AudioSource sataliteExplosion;
-    public AudioSource shipExplode;
-    public AudioSource sataliteEscape;
-    public AudioSource music;
+    //ENCAPSULATION
+    [SerializeField] private AudioSource bombExplode;
+    [SerializeField] private AudioSource sataliteExplosion;
+    [SerializeField] private AudioSource shipExplode;
+    [SerializeField] private AudioSource sataliteEscape;
+    [SerializeField] private AudioSource music;
 
     private void Awake()
     {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LifeIndicator : MonoBehaviour
 {
+    //ENCAPSULATION
     [SerializeField] private int lifeNum;
 
     private void Update()

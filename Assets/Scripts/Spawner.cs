@@ -5,8 +5,10 @@ using UnityEngine.UIElements;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject astroid;
-    public GameObject satalite;
+
+    //EMCAPSULATION
+    [SerializeField] private GameObject astroid;
+    [SerializeField] private GameObject satalite;
     private Vector2 spawnPos1;
     private Vector2 spawnPos2;
     private Vector2 spawnPos3;

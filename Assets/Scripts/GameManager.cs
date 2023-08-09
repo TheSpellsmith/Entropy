@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    //ENCAPSULATION
+    public static GameManager Instance { get; private set; }
     public float playerScore;
     public float finalScore;
     public float highScore;

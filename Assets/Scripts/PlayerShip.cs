@@ -6,11 +6,12 @@ using UnityEngine;
 //INHERITANCE
 public class PlayerShip : MovingObject
 {
-    public Vector2 mouseScreenPos;
-    public Vector2 direction;
-    public Rigidbody2D shipRB;
-    public float shipSpeed;
-    public GameObject bomb;
+    //EMCAPSULATION
+    private Vector2 mouseScreenPos;
+    private Vector2 direction;
+    [SerializeField] private Rigidbody2D shipRB;
+    private float shipSpeed = 27;
+    [SerializeField] private GameObject bomb;
     private Vector3 bombSpawn;
 
     public void Update()

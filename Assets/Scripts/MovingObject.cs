@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
-    public Vector2 knockbackDirection;
-    public Vector2 objectPos;
-    public Rigidbody2D objectRB;
-    public float fallSpeed;
+    //ENCAPSULATION
+    private Vector2 knockbackDirection;
+    private Vector2 objectPos;
+    [SerializeField] private Rigidbody2D objectRB;
+    [SerializeField] private float fallSpeed;
+
+    public void Update()
+    {
+        //ENCAPSULATION
+        if (fallSpeed < 0)
+        {
+            fallSpeed = 0;
+        }
+    }
     public void ScreenWrap()
     {
         if (gameObject.transform.position.x > 10)
